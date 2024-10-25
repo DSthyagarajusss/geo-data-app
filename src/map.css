@@ -1,0 +1,24 @@
+#btn{
+    color: red;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+  /* Hide the default Leaflet logo */
+.leaflet-control-attribution {
+    display: none;
+  }
+  
+  /* Custom logo styling */
+  .custom-logo {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+  }
+  
