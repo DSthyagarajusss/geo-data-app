@@ -1,14 +1,22 @@
-#btn{
-    color: red;
-    padding: 10px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px;
-    font-size: 16px;
+.button-container {
+  display: flex;
+  justify-content: center;
 }
 
-  /* Hide the default Leaflet logo */
+#btn {
+  color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  background-color: bisque;
+}
+#btn:hover{
+  background-color: black;
+  color: wheat;
+}
+
+ 
 .leaflet-control-attribution {
     display: none;
   }

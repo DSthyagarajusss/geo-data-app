@@ -1,0 +1,53 @@
+1. App.jsx
+Purpose: This file is the root component and serves as the entry point for the application.
+Functionality:
+It manages state for uploaded files and markers.
+It renders FileUpload for file upload functionality and Map for displaying the map.
+
+
+2. FileUpload.jsx
+Purpose: This component handles uploading of geospatial files.
+Functionality:
+Uses react-dropzone to enable drag-and-drop file uploading.
+Accepts specific file types (GeoJSON, KML, TIFF), which are validated before uploading.
+Calls a function to store each uploaded file in App.jsx state for further processing.
+
+3. Map.jsx
+Purpose: This component renders the Mapbox map and displays uploaded files and markers.
+Functionality:
+Sets up the map using react-map-gl (a library for Mapbox integrations in React).
+Displays uploaded files as layers on the map, visualizing the geospatial data.
+Allows users to add markers by clicking on the map, with markers stored in the component's state.
+Uses the Source and Layer components from react-map-gl to render the uploaded files, making it flexible to handle various geospatial formats.
+How Each Feature is Implemented
+
+1. File Upload and Display
+When users upload a file, FileUpload.jsx validates the file type and passes it to App.jsx, where it's stored in the uploadedFiles state.
+Each uploaded file is processed in Map.jsx, where Source and Layer components add it to the map if it’s in GeoJSON format. This enables users to see their uploaded data visually on the map.
+
+
+
+2. Mapbox Integration
+Mapbox API access token is used to render the map via react-map-gl.
+The viewport state in Map.jsx controls map settings like center coordinates, zoom level, and dimensions, allowing the map to be interactive and responsive.
+
+
+3. Markers and Interactivity
+Markers: Users can add a marker by clicking on the map. Each click creates a new marker at the click location, which is saved in the markers state in App.jsx.
+Distance Measurement (future feature): Measurement tools like turf.js can calculate distances between points, adding to the interactive features users can use to explore spatial data.
+File and Folder Structure
+public/index.html: The base HTML file for the React app.
+src/App.jsx: The main component, orchestrating state management and rendering other components.
+src/components/FileUpload.jsx: Handles file uploads using react-dropzone with validation for specific geospatial formats.
+src/components/Map.jsx: Sets up the map and renders geospatial data, markers, and interactivity.
+src/App.css and other CSS files: Provides styling for the app and its components.
+Summary of Libraries and Tools
+React: The core library for building the user interface.
+Mapbox: Provides a customizable, interactive map, handling a variety of spatial data formats.
+react-dropzone: Allows users to drag and drop files for easy uploading and handles file validation.
+react-map-gl: A React wrapper for Mapbox, enabling seamless integration of Mapbox maps and data within React components.
+Future Enhancements
+User Authentication: Implementing user accounts for a personalized experience.
+Enhanced Data Processing: More robust support for TIFF and other raster data files.
+Shape Drawing Tools: Allow users to draw and save custom shapes directly on the map.
+Distance and Area Calculations: Using libraries like turf.js to add advanced geospatial measurements.
